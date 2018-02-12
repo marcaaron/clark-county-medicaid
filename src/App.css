@@ -1,8 +1,10 @@
 .marker {
-  background-image: url('hospital.png');
-  background-size: cover;
-  width: 40px;
-  height: 40px;
+  /* background-image: url('hospital.png'); */
+  /* background-size: cover; */
+  background-color: black;
+  box-shadow: 1px 1px 5px white;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -14,4 +16,13 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+.mapboxgl-popup-content > a{
+	text-decoration: none;
+	font-size: 1.5em;
+	color:black;
+}
+.mapboxgl-popup-content > a:hover{
+	color: tomato;
 }

@@ -19,12 +19,20 @@ class Map extends Component {
 		  // create a HTML element for each feature
 		  var el = document.createElement('div');
 		  el.className = 'marker';
-
+		  let catString ='';
+		  marker.properties.categories.forEach((category)=>{
+		 	 catString += `${category}`;
+		  });
 		  // make a marker for each feature and add to the map
 		  new mapboxgl.Marker(el)
 		  .setLngLat(marker.geometry.coordinates)
 		  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-		  .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+		  .setHTML(`
+			  <h3>${marker.properties.title}</h3>
+			  	<p>${marker.properties.address}</p>
+				<a href="tel:${marker.properties.tel}">${marker.properties.tel}</a>
+				<p><strong>Categories:</strong> ${catString}</p>
+			`))
 		  .addTo(this.map);
 		});
 	}

@@ -2,14 +2,52 @@
   font-family: 'Gotham';
   src: url('Gotham-Medium.otf')  format('opentype');
  }
-
-/* .marker {
+h1{
+	margin:14px;
+}
+h2{
+	margin:14px;
+	font-size: 2em;
+}
+h3{
+	margin:14px;
+	font-size: 1.8em;
+}
+.marker {
+  background-image:url('tooth.png');
   background-size: cover;
-  width: 20px;
-  height: 20px;
+  /* background-color: black; */
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   cursor: pointer;
-} */
+}
+
+.active{
+	border:2px solid black;
+	transform-origin: center;
+	transform:rotate(-2deg) translate(-15px,-10px);
+	margin:20px 0;
+	background: hsl(55, 89%, 61%);
+	overflow-x: visible;
+	padding:10px;
+	box-shadow: 2px 2px 3px rgba(26,26,26,0.4);
+	transition:background-color 1s;
+}
+.listItem{
+	background-color: white;
+}
+.activeInfo{
+	display:block;
+}
+.sidebar-header{
+	box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+	width:100%;
+	text-align: center;
+	color:white;
+	background-color: rgba(26,26,26,0.9);
+	background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+}
 
 .mapboxgl-popup {
   max-width: 200px;
@@ -41,6 +79,7 @@
 	font-family: 'Gotham';
 }
 ul{
+	margin:0;
 	overflow-y:auto;
 	overflow: scroll;
 	position:relative;

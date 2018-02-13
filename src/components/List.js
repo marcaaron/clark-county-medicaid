@@ -10,31 +10,19 @@ class List extends Component {
 	}
 
 	expandItem = (index) => {
-		if(this.state.lastIndex>-1){
-			document.getElementById(`list_${this.state.lastIndex}`)
-				.style
-				.display='none';
-			document.querySelector(`.listItem_${this.state.lastIndex}`)
-				.style
-				.border='none';
-		}
-		const listItem = document.getElementById(`list_${index}`);
-		listItem.style.display='block';
-		document.querySelector(`.listItem_${index}`)
-			.style.border = '2px solid black';
 		const lastIndex = index;
 		const currentFeature = {...this.props.data.features[index]};
 		this.props.setFeature(currentFeature);
+		this.props.setActiveIndex(index);
 		this.setState({lastIndex});
 	}
-
 	render() {
     return (
       	<ul>
 			{this.props.data.features.map((feature, index) =>
-				<li className={`listItem_${index}`} onClick={()=>this.expandItem(index)} key={index}>
+				<li id={`_${index}`} className={this.props.activeIndex===index ?  'active' : 'listItem'} onClick={()=>this.expandItem(index)} key={index}>
 					<span>{feature.properties.title.toUpperCase()}</span>
-					<div className="extraInfo" id={`list_${index}`}>
+					<div className={this.props.activeIndex===index ? `activeInfo` : 'extraInfo'}>
 						<span>{feature.properties.address.toUpperCase()}</span>
 						<span>{feature.properties.tel}</span>
 					</div>

@@ -8,7 +8,8 @@ class App extends Component {
 	constructor(){
 		super();
 		this.state = {
-			currentFeature:{}
+			currentFeature:{},
+			activeIndex:-1
 		}
 	}
 
@@ -17,12 +18,26 @@ class App extends Component {
 		this.setState({currentFeature});
 	}
 
+	setActiveIndex = (index) => {
+		const activeIndex = index;
+		this.setState({activeIndex});
+	}
+
   render() {
 
     return (
       <div>
-		  <Sidebar setFeature={this.setFeature}/>
-		  <Map currentFeature={this.state.currentFeature}/>
+		  <Sidebar
+			  setFeature={this.setFeature}
+			  currentFeature={this.state.currentFeature}
+			  setActiveIndex={this.setActiveIndex}
+			  activeIndex={this.state.activeIndex}
+		  />
+		  <Map
+			  currentFeature={this.state.currentFeature}
+			  setFeature={this.setFeature}
+  			  setActiveIndex={this.setActiveIndex}
+		  />
       </div>
     );
   }

@@ -80,13 +80,13 @@ class Map extends Component {
 		}
     	const style = {
         	position: 'absolute',
-        	top: 0,
+        	top: '135px',
         	bottom: 0,
-			left:'33.3333%',
-        	width: '66.6666%'
+			left:'0',
+        	width: '100%'
     	};
 
-    	return <div style={style} ref={el => this.mapContainer = el} />;
+    	return <div className="mapbox" style={style} ref={el => this.mapContainer = el} />;
     }
 }
 

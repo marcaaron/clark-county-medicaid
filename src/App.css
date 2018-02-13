@@ -3,14 +3,14 @@
   src: url('Gotham-Medium.otf')  format('opentype');
  }
 h1{
-	margin:14px;
+	margin:6px;
 }
 h2{
-	margin:14px;
+	margin:6px;
 	font-size: 2em;
 }
 h3{
-	margin:14px;
+	margin:6px;
 	font-size: 1.8em;
 }
 .marker {
@@ -68,15 +68,17 @@ h3{
 }
 
 .sidebar{
-	/* position: absolute; */
-	width:33.3333333%;
+	position: absolute;
+	width:100%;
 	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 	height:100vh;
 	flex-direction: column;
 	z-index:99999;
 	display:flex;
 	align-items: center;
+	justify-content: flex-start;
 	font-family: 'Gotham';
+	height:100px;
 }
 ul{
 	margin:0;
@@ -104,4 +106,35 @@ li>span{
 	border-radius:20px;
 	user-select: none;
 	cursor:pointer;
+}
+@media screen and (min-width:660px) {
+	.mapbox{
+		position: 'absolute';
+		top: 0 !important;
+		bottom: 0 !important;
+		left:40% !important;
+		width: 60% !important;
+	}
+	.sidebar{
+		/* position: absolute; */
+		width:40%;
+		box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+		height:100vh;
+		flex-direction: column;
+		z-index:99999;
+		display:flex;
+		align-items: center;
+		font-family: 'Gotham';
+	}
+	h1{
+		margin:14px;
+	}
+	h2{
+		margin:14px;
+		font-size: 2em;
+	}
+	h3{
+		margin:14px;
+		font-size: 1.8em;
+	}
 }

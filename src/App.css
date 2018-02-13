@@ -1,13 +1,15 @@
-.marker {
-  /* background-image: url('hospital.png'); */
-  /* background-size: cover; */
-  background-color: black;
-  box-shadow: 1px 1px 5px white;
+@font-face {
+  font-family: 'Gotham';
+  src: url('Gotham-Medium.otf')  format('opentype');
+ }
+
+/* .marker {
+  background-size: cover;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
-}
+} */
 
 .mapboxgl-popup {
   max-width: 200px;
@@ -25,4 +27,42 @@
 }
 .mapboxgl-popup-content > a:hover{
 	color: tomato;
+}
+
+.sidebar{
+	/* position: absolute; */
+	width:33.3333333%;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+	height:100vh;
+	flex-direction: column;
+	z-index:99999;
+	display:flex;
+	align-items: center;
+	font-family: 'Gotham';
+}
+ul{
+	overflow-y:auto;
+	overflow: scroll;
+	position:relative;
+}
+li{
+	list-style: none;
+	display:block;
+	overflow: hidden;
+	cursor:pointer;
+	margin:5px;
+	padding:5px;
+}
+li>span{
+	display:block;
+}
+.extraInfo{
+	display:none;
+}
+
+.categories>div{
+	padding:10px 20px;
+	border-radius:20px;
+	user-select: none;
+	cursor:pointer;
 }

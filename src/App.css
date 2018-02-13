@@ -35,7 +35,7 @@ h3{
 	transition:background-color 1s;
 }
 .listItem{
-	background-color: white;
+	/* background-color: white; */
 }
 .activeInfo{
 	display:block;
@@ -93,9 +93,15 @@ li{
 	cursor:pointer;
 	margin:5px;
 	padding:5px;
+	display:flex;
+	flex-direction: column;
+	z-index:-1;
 }
 li>span{
 	display:block;
+}
+.address{
+	width:250px;
 }
 .extraInfo{
 	display:none;

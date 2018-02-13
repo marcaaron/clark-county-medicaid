@@ -21,10 +21,10 @@ class List extends Component {
       	<ul>
 			{this.props.data.features.map((feature, index) =>
 				<li id={`_${index}`} className={this.props.activeIndex===index ?  'active' : 'listItem'} onClick={()=>this.expandItem(index)} key={index}>
-					<span>{feature.properties.title.toUpperCase()}</span>
+					<span><strong>{feature.properties.title.toUpperCase()}</strong></span>
 					<div className={this.props.activeIndex===index ? `activeInfo` : 'extraInfo'}>
-						<span>{feature.properties.address.toUpperCase()}</span>
-						<span>{feature.properties.tel}</span>
+						<p className="address">{feature.properties.address.toUpperCase()}</p>
+						<p>{feature.properties.tel}</p>
 					</div>
 				</li>
 			)}

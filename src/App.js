@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Map from './components/Map';
 import Sidebar from './components/Sidebar';
 import './App.css';
-
+import Modernizr from './modernizr';
 
 class App extends Component {
 	constructor(){
@@ -24,8 +24,9 @@ class App extends Component {
 	}
 
   render() {
-
-    return (
+	if (Modernizr.webgl) {
+  	// supported
+	return (
       <div>
 		  <Sidebar
 			  setFeature={this.setFeature}
@@ -40,6 +41,16 @@ class App extends Component {
 		  />
       </div>
     );
+	} else {
+  	// not-supported
+		return(
+	      <div style={{margin:'2em', textAlign:'center'}}>
+			Please enable WebGL on your browser to view this project.<br/><br/>
+			Visit <a href="https://get.webgl.org/">https://get.webgl.org/</a> for additional information.
+	      </div>
+		);
+	}
+
   }
 }
 

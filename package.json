@@ -2,7 +2,7 @@
   "name": "mapbox-react-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marcaaron.github.io/clark-county-medicaid",
+  "homepage": "https://marcaaron.github.io/medicaid-maps",
   "dependencies": {
     "mapbox-gl": "^0.44.0",
     "modernizr": "^3.6.0",
